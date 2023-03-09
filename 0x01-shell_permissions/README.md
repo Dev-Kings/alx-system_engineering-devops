@@ -32,3 +32,5 @@ The file _hello is in the working directory
 The file _hello is a symbolic lin
 
 chown --from=guillaume betty hello -> changes the owner of the file hello to betty only if it is owned by the user guillaume
+
+telnet towel.blinkenlights.nl -> plays the StarWars IV episode in the terminal
