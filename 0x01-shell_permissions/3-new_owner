@@ -1,1 +1,1 @@
-#!/bin/bash\sudo chown betty hello
+#!/bin/bash\nsudo chown betty hello
