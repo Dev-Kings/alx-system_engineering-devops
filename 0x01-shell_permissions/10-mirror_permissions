@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod a+rwx,u-x,g-x,o-wx olleh
+chmod ug=rw,o=r olleh
