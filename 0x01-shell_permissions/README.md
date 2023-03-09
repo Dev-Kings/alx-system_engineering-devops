@@ -21,3 +21,5 @@ chmod -R +x . ->  adds execute permission to all subdirectories of the current d
 Regular files should not be changed.
 
 mkdir -m 751 my_dir ->creates a directory called my_dir with permissions 751 in the working directory
+
+chgrp school hello -> changes the group owner to school for the file hello
