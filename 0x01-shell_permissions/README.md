@@ -12,6 +12,11 @@ Owner: no permission at all
 Group: no permission at all
 Other users: all the permissions
 
-chmod 753 hello -> sets file mode to -rwxr-x-wx
+ehmod 753 hello -> sets file mode to -rwxr-x-wx
 
-chmod 664 olleh -> sets file olleh mode to -rw-rw-r--
+chmod --reference=olleh hello -> sets file olleh mode to same as that of hello file
+
+chmod -R +x . ->  adds execute permission to all subdirectories of the current directory for the owner, the group owner and all other users.
+
+Regular files should not be changed.
+
