@@ -13,3 +13,5 @@ Group: no permission at all
 Other users: all the permissions
 
 chmod 753 hello -> sets file mode to -rwxr-x-wx
+
+chmod 664 olleh -> sets file olleh mode to -rw-rw-r--
