@@ -22,3 +22,5 @@ Sorted from the newest to the oldest
 
 grep -i "root" /etc/passwd -> Displays lines containing the pattern “root” from the file /etc/passwd
 grep -c -i "bin" /etc/passwd -> Display the number of lines that contain the pattern “bin” in the file /etc/passwd
+grep -i "^[a-z]" /etc/ssh/sshd_config -> Display all lines of the file /etc/ssh/sshd_config starting with a letter.
+include capital letters as well
