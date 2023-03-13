@@ -46,5 +46,7 @@ cut -c 1 | paste -s -d '' -> An acrostic is a poem (or other form of writing) in
 Create a script that decodes acrostics that use the first letter of each line.
 The ‘decoded’ message has to end with a new line
 
-
+tail -n +2 | cut -f -1 | sort -k 1 | uniq -c | sort -rnk 1 | head -n 11 | rev | cut -d ' ' -f -1 |
+rev -> parses web servers logs in TSV format as input and displays the 11 hosts or IP addresses which did the most requests.
+Order by number of requests, most active host or IP at the top
 
