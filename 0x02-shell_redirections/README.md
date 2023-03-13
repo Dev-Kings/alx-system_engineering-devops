@@ -19,3 +19,5 @@ Requirements:
 
 One file per line
 Sorted from the newest to the oldest
+
+grep -i "root" /etc/passwd -> Displays lines containing the pattern “root” from the file /etc/passwd
