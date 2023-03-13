@@ -25,3 +25,4 @@ grep -c -i "bin" /etc/passwd -> Display the number of lines that contain the pat
 grep -i "^[a-z]" /etc/ssh/sshd_config -> Display all lines of the file /etc/ssh/sshd_config starting with a letter.
 include capital letters as well
 tr "A" "Z" | tr "c" "e" -> Replace all characters A and c from input to Z and e respectively.
+tr -d "cC" -> Create a script that removes all letters c and C from input.
