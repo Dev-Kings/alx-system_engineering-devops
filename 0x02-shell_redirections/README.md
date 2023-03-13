@@ -13,4 +13,9 @@ find . -type d -not -name '.' | wc -l -> counts the number of directories and su
 
 The current and parent directories should not be taken into account
 Hidden directories should be counted
-  
+s -t1 | head -n 10 -> displays the 10 newest files in the current directory.
+
+Requirements:
+
+One file per line
+Sorted from the newest to the oldest
