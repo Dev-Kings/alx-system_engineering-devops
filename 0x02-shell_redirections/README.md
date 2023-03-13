@@ -1,1 +1,2 @@
-echo 'Hello, World' > 0-hello_world -> write text to 0-hello_world file
+echo 'Hello, World' -> write text to stdoutput
+echo "\"Ôo'" -> output "Ôo' to stdoutput
