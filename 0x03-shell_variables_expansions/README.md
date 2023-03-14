@@ -10,3 +10,6 @@ echo $((128+$TRUEKNOWLEDGE)) -> prints the result of the addition of 128 with th
 echo $(($POWER/$DIVIDE)) -> prints the result of POWER divided by DIVIDE, followed by a new line.
 echo $(($BREATH**$LOVE)) -> displays the result of BREATH to the power LOVE
 echo $((2#$BINARY)) -> coverts value stored in BINARY variable to base 10
+echo {a..z}{a..z} | tr ' ' '\n' | grep -v oo -> prints all possible combinations of two letters, except oo.Letters are lower cases, from a to z
+One combination per line. The output should be alpha ordered, starting with aa. Do not print oo
+Your script file should contain maximum 64 characters
