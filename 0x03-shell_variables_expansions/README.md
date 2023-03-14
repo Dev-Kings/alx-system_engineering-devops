@@ -16,4 +16,4 @@ Your script file should contain maximum 64 characters
 printf "%.2f\n" $NUM -> prints a number stored in global variable NUM with two decimal places, followed by a new line.
 printf "%x\n" $DECIMAL -> converts value stored in variable DECIMAL to hexadecimal
 tr 'A-Za-z' 'N-ZA-Mn-za-m' -> encodes and decodes text using the rot13 encryption. Assume ASCII.
-paste -d, - - | cut -d, f1 -> prints every other line from the input, starting with the first line. 
+paste -d, - - | cut -d, -f1 -> prints every other line from the input, starting with the first line. 
