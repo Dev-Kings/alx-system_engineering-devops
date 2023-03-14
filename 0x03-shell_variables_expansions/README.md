@@ -14,4 +14,5 @@ echo {a..z}{a..z} | tr ' ' '\n' | grep -v oo -> prints all possible combinations
 One combination per line. The output should be alpha ordered, starting with aa. Do not print oo
 Your script file should contain maximum 64 characters
 printf "%.2f\n" $NUM -> prints a number stored in global variable NUM with two decimal places, followed by a new line.
-printf "%x\n" $DECIMAL -> converts value stored in variable DECIMAL to hexadecimal 
+printf "%x\n" $DECIMAL -> converts value stored in variable DECIMAL to hexadecimal
+tr 'A-Za-z' 'N-ZA-Mn-za-m' -> encodes and decodes text using the rot13 encryption. Assume ASCII. 
