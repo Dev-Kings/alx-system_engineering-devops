@@ -5,3 +5,4 @@ echo $PATH | tr ':' '\n' | wc -l  -> counts the number of directories in the PAT
 printenv -> prints environment variables
 set -> lists all local variables and environment variables, and functions.
 BEST="School" -> set variable BEST to have value of 'School'
+export BEST="School" -> set global variable BEST with value 'School'
