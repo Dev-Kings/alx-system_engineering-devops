@@ -13,3 +13,4 @@ echo $((2#$BINARY)) -> coverts value stored in BINARY variable to base 10
 echo {a..z}{a..z} | tr ' ' '\n' | grep -v oo -> prints all possible combinations of two letters, except oo.Letters are lower cases, from a to z
 One combination per line. The output should be alpha ordered, starting with aa. Do not print oo
 Your script file should contain maximum 64 characters
+printf "%.2f\n" $NUM -> prints a number stored in global varoable NUM with two decimal places, followed by a new line.
