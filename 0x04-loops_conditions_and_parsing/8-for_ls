@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 # The script lists files of the current directory
 for file in *; do
-	if [ ! -d "$file" ] && [ "$file" != ".*" ] && [[ "$file" == *-* ]]; then
-		filename=$(echo "$file" | cut -d '-' -f 2- | sed 's/^[[:space:]]*//')
-		echo "$filename"
-	fi
+	echo "${file#*-}"
 done
