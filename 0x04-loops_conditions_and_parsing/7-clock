@@ -2,13 +2,15 @@
 # This script displays the time for 12 hours and 59 minutes.
 hr=0
 min=0
-while [ $min -le 59 ] && [ $hr -le 11 ] ; do
+while [ $min -le 59 ] && [ $hr -lt 13 ] ; do
 	if [ $min -eq 0 ]; then
 		echo "Hour: $hr"
 	elif [ $min -eq 59 ]; then
 		((hr++))
 		echo "$min"
-		echo "Hour: $hr"
+		if [ "$hr" != 13 ]; then
+			echo "Hour: $hr"
+		fi
 		((min=0))
 	else
 		echo "$min"
