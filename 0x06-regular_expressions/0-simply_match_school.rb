@@ -4,11 +4,9 @@
 def match(string)
   regex = /School/
 
-  if string.match(regex)
-    puts string.gsub(regex, 'School')
-  else
-    puts ''
-  end
+  matches = string.scan(regex)
+
+  puts matches.join('')
 end
 
 # Main function
