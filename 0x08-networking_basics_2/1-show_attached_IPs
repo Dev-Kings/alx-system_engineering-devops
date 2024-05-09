@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Script displaying all active IPv4 IPs on machine its executed on.
+interface_info=$(ifconfig)
+ipv4_addresses=$(echo "$interface_info" | grep "inet " | awk '{print $2}')
+echo "$ipv4_addresses"
