@@ -39,3 +39,14 @@ For this project, following are the concepts:
 	- 1 application files (your code base)
 	- 1 database (MySQL)
 	- 1 domain name foobar.com configured with a www record that points to your server IP 8.8.8.8
+
+1. Distributed web infrastructure
+	Link to image of the design:
+	```https://imgur.com/JTIDLzi
+	The design uses:
+	- 2 servers
+	- 1 web server (Nginx)
+	- 1 application server
+	- 1 load-balancer (HAproxy)
+	- 1 set of application files (your code base)
+	- 1 database (MySQL)
