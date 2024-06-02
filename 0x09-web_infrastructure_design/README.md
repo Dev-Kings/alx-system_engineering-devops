@@ -64,3 +64,11 @@ For this project, following are the concepts:
 	- 1 SSL certificate to serve www.foobar.com over HTTPS
 	- 3 monitoring clients (data collector for Sumologic or other monitoring services)
 	```
+3. Scale up
+	Link to image of the design:
+
+	[Design](https://imgur.com/WL866VJ)
+	```
+	- 1 server
+	- 1 load-balancer (HAproxy) configured as cluster with the other one
+	- Split components (web server, application server, database) with their own server```
