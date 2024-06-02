@@ -44,7 +44,8 @@ For this project, following are the concepts:
 	```
 1. Distributed web infrastructure
 	Link to image of the design:
-	[Design](https://imgur.com/JTIDLzi)
+
+	[Design](https://imgur.com/wMOF3bv)
 	```
 	The design uses:
 	- 2 servers
