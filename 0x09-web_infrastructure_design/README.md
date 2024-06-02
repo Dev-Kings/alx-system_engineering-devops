@@ -31,8 +31,9 @@ For this project, following are the concepts:
 ## Tasks
 0. Simple web stack
 	Link to image of the design:
-	```
+	
 	[Design](https://imgur.com/a/V0KnLCR)
+	```
 	The design uses:
 	- 1 server
 	- 1 web server (Nginx)
@@ -43,8 +44,8 @@ For this project, following are the concepts:
 	```
 1. Distributed web infrastructure
 	Link to image of the design:
-	```
 	[Design](https://imgur.com/JTIDLzi)
+	```
 	The design uses:
 	- 2 servers
 	- 1 web server (Nginx)
