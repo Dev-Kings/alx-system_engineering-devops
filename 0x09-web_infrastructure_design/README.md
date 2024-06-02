@@ -31,7 +31,8 @@ For this project, following are the concepts:
 ## Tasks
 0. Simple web stack
 	Link to image of the design:
-	```https://imgur.com/a/V0KnLCR
+	```
+	https://imgur.com/a/V0KnLCR
 	The design uses:
 	- 1 server
 	- 1 web server (Nginx)
@@ -39,10 +40,11 @@ For this project, following are the concepts:
 	- 1 application files (your code base)
 	- 1 database (MySQL)
 	- 1 domain name foobar.com configured with a www record that points to your server IP 8.8.8.8
-
+	```
 1. Distributed web infrastructure
 	Link to image of the design:
-	```https://imgur.com/JTIDLzi
+	```
+	https://imgur.com/JTIDLzi
 	The design uses:
 	- 2 servers
 	- 1 web server (Nginx)
@@ -50,3 +52,4 @@ For this project, following are the concepts:
 	- 1 load-balancer (HAproxy)
 	- 1 set of application files (your code base)
 	- 1 database (MySQL)
+	```
