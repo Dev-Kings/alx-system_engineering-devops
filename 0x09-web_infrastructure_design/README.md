@@ -55,3 +55,12 @@ For this project, following are the concepts:
 	- 1 set of application files (your code base)
 	- 1 database (MySQL)
 	```
+2. Secured and monitored web infrastructure
+	Link to image of the design:
+
+	[Design](https://imgur.com/MLtKAOK)
+	```
+	- 3 firewalls
+	- 1 SSL certificate to serve www.foobar.com over HTTPS
+	- 3 monitoring clients (data collector for Sumologic or other monitoring services)
+	```
