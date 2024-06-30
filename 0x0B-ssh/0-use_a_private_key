@@ -1,7 +1,3 @@
 #!/bin/env bash
-# ssh with single-character flags to connect to server
-
-# Server address
-SERVER="100.25.155.108"
-
-ssh -i ~/.ssh/school ubuntu@$SERVER
+# Bassh script with single-character flags to connect to server
+ssh -i ~/.ssh/school ubuntu@"100.25.155.108"
