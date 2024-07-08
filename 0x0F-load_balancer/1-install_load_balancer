@@ -40,8 +40,14 @@ frontend main
 
 backend web_servers
 	balance roundrobin
-	server web-01 335953-web-01:80 check
-	server web-02 335953-web-02:80 check
+	server 335953-web-01
+	server 335953-web-02
+
+listen stats
+	bind *:8080
+	stats enable
+	stats uri /stats
+	stats refresh 10s
 EOL'
 
 # Enable HAProxy init script

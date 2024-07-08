@@ -4,6 +4,11 @@
 # Update and install nginx
 sudo apt-get update -y && sudo apt-get install -y nginx
 
+# Add entry file and error files
+mkdir -p /etc/nginx/html
+echo "Hello World!" > /var/www/html/index.nginx-default.html
+echo "Ceci n'est pas une page" > /etc/nginx/html/404.html
+
 # Configure Nginx to include custom HTTP response header
 sudo bash -c 'cat > /etc/nginx/sites-available/default << EOL
 server {
