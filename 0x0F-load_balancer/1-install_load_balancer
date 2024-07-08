@@ -40,8 +40,8 @@ frontend main
 
 backend web_servers
 	balance roundrobin
-	server 335953-web-01
-	server 335953-web-02
+	server 335953-web-01 54.196.29.210
+	server 335953-web-02 54.87.217.94
 
 listen stats
 	bind *:8080
