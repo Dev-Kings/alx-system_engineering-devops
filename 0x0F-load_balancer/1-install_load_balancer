@@ -51,7 +51,7 @@ listen stats
 EOL'
 
 # Enable HAProxy init script
-sudo systemctl enable haproxy
+sudo service haproxy enable
 
 # Restart HAProxy to apply changes
-sudo systemctl restart haproxy
+sudo service haproxy restart
