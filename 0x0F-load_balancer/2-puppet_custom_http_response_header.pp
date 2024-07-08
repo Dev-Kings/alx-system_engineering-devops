@@ -13,7 +13,7 @@ file_line { 'redirection':
   ensure  => 'present',
   path    => '/etc/nginx/sites-available/default',
   after   => 'listen 80 default_server;',
-  line    => 'rewrite ^/redirect_me https://github.com/Shadkoech permanent;',
+  line    => 'rewrite ^/redirect_me https://github.com/Dev-Kings permanent;',
   require => Package['nginx'],
 }
 
