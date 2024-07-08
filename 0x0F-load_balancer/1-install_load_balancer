@@ -50,8 +50,5 @@ listen stats
 	stats refresh 10s
 EOL'
 
-# Enable HAProxy init script
-sudo service haproxy enable
-
 # Restart HAProxy to apply changes
 sudo service haproxy restart
