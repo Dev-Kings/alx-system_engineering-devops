@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Script to configure subdomain www to point to load balancer IP
-# Function to display usage information
+# Script: 0-world_wide_web
+# Description: Configure subdomains to point to their respective IP addresses using DNS information
 
 display_usage() {
     echo "Usage: $0 domain [subdomain]"
