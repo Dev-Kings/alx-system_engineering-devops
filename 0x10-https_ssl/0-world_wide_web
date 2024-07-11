@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Script to configure subdomain www to point to load balancer IP
 # Function to display usage information
 
