@@ -1,0 +1,41 @@
+#!/bin/bash
+# Script to configure subdomain www to point to load balancer IP
+# Function to display usage information
+
+display_usage() {
+    echo "Usage: $0 domain [subdomain]"
+    echo "  domain: Domain name to audit"
+    echo "  subdomain (optional): Specific subdomain to audit"
+    exit 1
+}
+
+# Check if correct number of arguments are provided
+if [ $# -lt 1 ] || [ $# -gt 2 ]; then
+    display_usage
+fi
+
+domain="$1"
+subdomain="$2"
+
+# Define subdomains array
+subdomains=("www" "lb-01" "web-01" "web-02")
+
+# Function to get DNS information for a subdomain
+get_dns_info() {
+    local sub=$1
+    local domain=$2
+    dig_output=$(dig ${sub}.${domain} | awk '/^;; ANSWER SECTION:$/,/^$/' | grep -v '^;;')
+    record_type=$(echo "${dig_output}" | awk '{print $4}')
+    destination=$(echo "${dig_output}" | awk '{print $5}')
+    echo "The subdomain ${sub} is a ${record_type} record and points to ${destination}"
+}
+
+# If subdomain parameter is provided, get info for that subdomain
+if [ -n "${subdomain}" ]; then
+    get_dns_info "${subdomain}" "${domain}"
+else
+    # Display info for all predefined subdomains
+    for sub in "${subdomains[@]}"; do
+        get_dns_info "${sub}" "${domain}"
+    done
+fi
