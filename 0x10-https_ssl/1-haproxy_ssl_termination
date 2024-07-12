@@ -28,8 +28,9 @@ defaults
     errorfile 504 /etc/haproxy/errors/504.http
 
 frontend https-in
-    bind *:443 ssl crt /etc/letsencrypt/live/www.kingasia.tech/fullchain.pem
-    bind *:443 ssl crt /etc/letsencrypt/live/www.kingasia.tech/privkey.pem
+    bind *:80
+    bind *:443 ssl crt /etc/haproxy/certs/www.kingasia.tech.pem
+    redirect scheme https code 301 if !{ ssl_fc }
     mode http
     option httplog
     default_backend web_servers
@@ -39,7 +40,3 @@ backend web_servers
     option forwardfor
     server 335953-web-01 54.196.29.210:80 check
     server 335953-web-02 54.87.217.94:80 check
-
-frontend http-in
-    bind *:80
-    redirect scheme https code 301 if !{ ssl_fc }
