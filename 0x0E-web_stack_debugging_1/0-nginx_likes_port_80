@@ -2,8 +2,8 @@
 # Script to ensure Nginx is running and listening on port 80 of all the
 # servers active IPv4 IPs.
 
-# Configure to run on port 80
-sed -i 's/listen 80 default_server;/listen 80 default_server;/' /etc/nginx/sites-available/default
+rm /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
 
 # Restart Nginx service
 service nginx restart
