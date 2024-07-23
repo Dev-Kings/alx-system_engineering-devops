@@ -1,11 +1,31 @@
 #!/usr/bin/env bash
-# Script to configure Nginx to be running as the nginx user and listen on
-# all active IPs on port 8080
-sed -i 's/user .*/user nginx;/g' /etc/nginx/nginx.conf
-sed -i 's/listen 80;/listen 8080;/g' /etc/nginx/sites-available/default
+# Configures Nginx to run as nginx user and listen on port 8080
+
+# Update package list and install Nginx
+sudo apt-get -y update
+sudo apt-get -y install nginx
+
+# Create a custom HTML file that contains "Hello World!"
+echo "Hello World!" | sudo tee /var/www/html/index.html
+
+# Ensure the nginx user exists
+if ! id -u nginx > /dev/null 2>&1; then
+    sudo useradd -r -s /sbin/nologin nginx
+fi
+
+# Update Nginx configuration to run as nginx user and listen on port 8080
+sudo sed -i 's/user .*/user nginx;/g' /etc/nginx/nginx.conf
+sudo sed -i 's/listen 80 default_server;/listen 8080 default_server;/' /etc/nginx/sites-available/default
+sudo sed -i 's/listen \[::\]:80 default_server;/listen \[::\]:8080 default_server;/' /etc/nginx/sites-available/default
 
 # Ensure ownership and permissions are set for nginx user
-chown -R nginx:nginx /var/log/nginx /var/lib/nginx /var/www /etc/nginx
+sudo chown -R nginx:nginx /var/log/nginx /var/lib/nginx /var/www /etc/nginx
 
-# Restart Nginx to apply changes
-service nginx restart
+# Reload Nginx to apply the changes without using systemctl
+sudo /etc/init.d/nginx reload
+
+# Start Nginx if not already running
+sudo /etc/init.d/nginx start
+
+# Check the status of Nginx to ensure it is running
+sudo /etc/init.d/nginx status
