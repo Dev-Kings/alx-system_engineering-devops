@@ -4,6 +4,7 @@ Module with function to find number of Reddit subscribers.
 """
 import requests
 
+
 def number_of_subscribers(subreddit):
     """Function to find number of subs for a given subreddit.
     Args:
