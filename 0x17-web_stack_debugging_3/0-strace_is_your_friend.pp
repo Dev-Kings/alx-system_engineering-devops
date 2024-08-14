@@ -1,12 +1,21 @@
-file { '/path/to/fix/or/create':
-  ensure  => 'file',
-  content => 'Correct content for the file',
-  owner   => 'root',
-  group   => 'root',
+# This manifest fixes the 500 Internal Server Error by correcting file
+# permissions and paths for the Apache web server.
+
+file { '/var/www/html/index.php':
+  ensure  => file,
+  owner   => 'www-data',
+  group   => 'www-data',
   mode    => '0644',
+  content => '<?php phpinfo(); ?>',
 }
 
-exec { 'fix-permissions':
-  command => 'chmod 755 /path/to/fix',
-  onlyif  => 'test $(stat -c "%a" /path/to/fix) != 755',
+exec { 'fix-apache-permissions':
+  command => 'chmod 755 /var/www/html/index.php',
+  onlyif  => 'test $(stat -c "%a" /var/www/html/index.php) != 755',
+}
+
+service { 'apache2':
+  ensure  => running,
+  enable  => true,
+  require => File['/var/www/html/index.php'],
 }
