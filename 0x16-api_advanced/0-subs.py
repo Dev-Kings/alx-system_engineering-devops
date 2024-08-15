@@ -1,24 +1,24 @@
 #!/usr/bin/python3
+"""Python module that queries the Reddit API and returns the
+number of sunscribers for a given subreddit
 """
-Module with function to find number of Reddit subscribers.
-"""
+
 import requests
 
 
 def number_of_subscribers(subreddit):
-    """Function to find number of subs for a given subreddit.
-    Args:
-        subreddit: (string): The subreddit.
-    Returns:
-        int: number of subscribers, else 0.
-    """
-    url = f"https://www.reddit.com/r/{subreddit}/about.json"
-    headers = {"User-Agent": "Mozilla/5.0"}
+    """Obtains number of subscribers in a parsed
+    subreddit"""
 
-    response = requests.get(url, headers=headers, allow_redirects=False)
+    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
 
+    # Setting up a custom User-Agent to avoid too many Request errors
+    headers = {'User-Agent': 'Google Chrome Version 120.0.6099.217'}
+
+    response = requests.get(url, headers=headers)
     if response.status_code == 200:
-        data = response.json()
-        return (data['data'].get('subscribers', 0))
+        output = response.json()
+        number_of_subscribers = output['data']['subscribers']
+        return (number_of_subscribers)
     else:
-        return (0)
+        return 0
