@@ -2,7 +2,8 @@
 # Script to reload gunicorn service with no downtime
 
 # Get the Gunicorn master process ID
-MASTER_PID=$(ps aux | grep gunicorn | grep ' Ss' | awk '{print $2}')
+# MASTER_PID=$(ps aux | grep gunicorn | grep ' Ss' | awk '{print $2}')
+MASTER_PID=$(pgrep -f 'gunicorn.* -b' | head -n 1)
 
 if [ -z "$MASTER_PID" ]; then
         exit 1
